@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
-import { PRIMARY, PRIMARY_LIGHT, PRIMARY_RGB } from "components/Theme/Colors";
+import {
+  PRIMARY,
+  PRIMARY_LIGHT,
+  PRIMARY_RGB,
+  CL_BLACK,
+  BLACK
+} from "components/Theme/Colors";
 
 const StepWrapper = styled.div`
   width: 100%;
@@ -19,13 +25,23 @@ const StepStyled = styled.ul`
 
 const StepItem = styled.li`
   width: 15%;
+  padding: 16px;
   position: relative;
   list-style-type: none;
+  cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
 
   :last-child:after {
     content: none;
   }
 
+  :hover, :active, :visited {
+    background-color: ${CL_BLACK};
+    > span {
+      color: ${BLACK};
+      font-weight: bold;
+    }
+
+  }
   :after {
     content: "";
     position: absolute;
@@ -51,8 +67,7 @@ const StepItem = styled.li`
     background: white;
     color: ${PRIMARY};
     text-align: center;
-    font-weight: bold;
-    cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
+    font-weight: 600;
     -webkit-transition: background 0.3s;
     transition: background 0.3s;
   }
@@ -71,8 +86,8 @@ const StepItem = styled.li`
     :after {
       width: 3px;
       height: 100%;
-      top: 10px;
-      left: 5%;
+      top: 30px;
+      left: 13%;
     }`
       : `
     float: left;
@@ -86,7 +101,7 @@ const StepItem = styled.li`
   :after {
     width: 100%;
     height: 3px;
-    top: 10px;
+    top: 25px;
     left: 50%;
   }`}
 
@@ -99,7 +114,7 @@ const StepItem = styled.li`
       transition: background .3s;
     }
     :before {
-      box-shadow: ${isLastElm ? `0 0 6px ${PRIMARY_RGB}` : 'none'};
+      box-shadow: ${isLastElm ? `0 0 6px ${PRIMARY_RGB}` : "none"};
       border: 2px solid ${PRIMARY};
       background: ${PRIMARY};
       color: white;

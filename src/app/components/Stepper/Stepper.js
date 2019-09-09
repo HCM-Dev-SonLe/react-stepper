@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
-import { StepWrapper, StepStyled, StepItem } from "./styledStepper";
+import { StepWrapper, StepStyled, StepItem } from "./styles";
 
 class Step extends PureComponent {
   state = {
