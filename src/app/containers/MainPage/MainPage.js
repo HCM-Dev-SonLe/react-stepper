@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 
 import { Stepper, Step } from "components/Stepper";
+import StepperAPITable from "components/Table";
 import STEPPER_DIRECTION from "constants/stepper";
 
 import { Container } from "./styles";
@@ -8,7 +9,7 @@ import { Container } from "./styles";
 class MainPage extends PureComponent {
   onChange = (event, activeKey) => {
     console.log(event);
-    console.log('You are select', activeKey);
+    console.log("You are select", activeKey);
   };
 
   render() {
@@ -22,7 +23,7 @@ class MainPage extends PureComponent {
           <Step activeKey={4} title="Language" />
           <Step activeKey={5} title="Sample" />
         </Stepper>
-        <hr/>
+        <hr />
         <h1>Vertical Stepper</h1>
         <Stepper
           onChange={this.onChange}
@@ -35,6 +36,8 @@ class MainPage extends PureComponent {
           <Step activeKey={4} title="Language" />
           <Step activeKey={5} title="Sample" />
         </Stepper>
+        <hr />
+        <StepperAPITable />
       </Container>
     );
   }
