@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { PRIMARY } from "components/Theme/Colors";
+import { PRIMARY, PRIMARY_LIGHT, PRIMARY_RGB } from "components/Theme/Colors";
 
 const StepWrapper = styled.div`
   width: 100%;
@@ -29,7 +29,7 @@ const StepItem = styled.li`
   :after {
     content: "";
     position: absolute;
-    background: #979797;
+    background: ${PRIMARY_LIGHT};
     top: 10px;
     left: 5%;
     z-index: -1;
@@ -43,13 +43,13 @@ const StepItem = styled.li`
     width: 20px;
     height: 20px;
     font-size: 12px;
-    border: 1px solid #bebebe;
+    border: 2px solid ${PRIMARY_LIGHT};
     display: inline-block;
     margin: 0 10px auto auto;
     border-radius: 100%;
     line-height: 20px;
     background: white;
-    color: #bebebe;
+    color: ${PRIMARY};
     text-align: center;
     font-weight: bold;
     cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
@@ -64,7 +64,6 @@ const StepItem = styled.li`
     text-align: left;
     
     :before {
-      
       display: inline-block;
       margin: 0 10px auto auto;
     }
@@ -100,7 +99,8 @@ const StepItem = styled.li`
       transition: background .3s;
     }
     :before {
-      border-color: ${PRIMARY};
+      box-shadow: ${isLastElm ? `0 0 6px ${PRIMARY_RGB}` : 'none'};
+      border: 2px solid ${PRIMARY};
       background: ${PRIMARY};
       color: white;
     }

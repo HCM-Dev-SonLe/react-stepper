@@ -11,22 +11,22 @@ class MainPage extends PureComponent {
     return (
       <div style={{ width: "1200px" }}>
         <Stepper onChange={this.onChange} activeStepKey={1}>
-          <Step activeKey={1} title="1" />
-          <Step activeKey={2} title="2" disabled />
-          <Step activeKey={3} title="3" />
-          <Step activeKey={4} title="4" />
-          <Step activeKey={5} title="5" />
+          <Step activeKey={1} title="Supplier" />
+          <Step activeKey={2} title="Disable" disabled />
+          <Step activeKey={3} title="Basic Information" />
+          <Step activeKey={4} title="Language" />
+          <Step activeKey={5} title="Sample" />
         </Stepper>
         <Stepper
           onChange={this.onChange}
           activeStepKey={1}
           direction="vertical"
         >
-          <Step activeKey={1} title="1" />
-          <Step activeKey={2} title="2" disabled />
-          <Step activeKey={3} title="3" />
-          <Step activeKey={4} title="4" />
-          <Step activeKey={5} title="5" />
+          <Step activeKey={1} title="Supplier" />
+          <Step activeKey={2} title="Disable" disabled />
+          <Step activeKey={3} title="Basic Information" />
+          <Step activeKey={4} title="Language" />
+          <Step activeKey={5} title="Sample" />
         </Stepper>
       </div>
     );
