@@ -23,7 +23,7 @@ const StepStyled = styled.ul`
   justify-content: center;`}
 `;
 
-const StepItem = styled.li`
+const BaseStepItem = styled.li`
   width: 15%;
   padding: 16px;
   position: relative;
@@ -42,6 +42,7 @@ const StepItem = styled.li`
     }
 
   }
+  
   :after {
     content: "";
     position: absolute;
@@ -71,7 +72,9 @@ const StepItem = styled.li`
     -webkit-transition: background 0.3s;
     transition: background 0.3s;
   }
+`;
 
+const StepItem = styled(BaseStepItem)`
   ${({ direction }) =>
     direction === "vertical"
       ? `
@@ -94,9 +97,9 @@ const StepItem = styled.li`
     text-align: center;
     
     :before {
-    display: block;
-    margin: 0 auto 10px auto;
-  }
+      display: block;
+      margin: 0 auto 10px auto;
+    }
 
   :after {
     width: 100%;
